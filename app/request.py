@@ -29,4 +29,29 @@ def get_sources(source):
             sources_results = process_results(sources_results_list)
 
     return sources_results
+
+def process_results(sources_list):
+    '''
+    Function that process the source results list and transforms them into a list of objects
+    Args:
+        sources_list: A list of dictionaries that contains sources details
+
+    Returns:
+        sources_results: a list of sources objects
+    '''
+
+    sources_results = []
+    for source_item in sources_list:
+        source_id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        category = source_item.get('category')
+        country = source_item.get('country')
+
+
+        source_object = Sources(id, name, description, url, category,country)
+        sources_results.append(source_object)
+
+    return sources_results
     return movie_results
