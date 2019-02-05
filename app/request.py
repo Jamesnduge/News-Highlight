@@ -1,7 +1,7 @@
 from app import app
 import urllib.request,json
-from app import models
-Source =source.Source
+from .models import Source
+#Source =source.Source
 
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config['BASE_NEWS_API_URL']
@@ -46,12 +46,9 @@ def process_results(sources_list):
         source_id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
-        url = source_item.get('url')
-        category = source_item.get('category')
-        country = source_item.get('country')
 
 
-        source_object = Sources(id, name, description, url, category,country)
+        source_object = Source(id, name, description)
         sources_results.append(source_object)
 
     return sources_results
