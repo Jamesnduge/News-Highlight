@@ -10,5 +10,29 @@
     </head>
     <body>
       <h1>{{title}}</h1>
+      <!-- General news section  -->
+        <h3> General News</h3>
+        <ul style="decoration:none;">
+          <div style="font-size:15px; color:#2c4f7c;" class="container">
+            <marquee style=" font-size:20px; font-family: 'Handlee', cursive;">Catch up on the latest news from all around the world <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Breathe-face-smile.svg/220px-Breathe-face-smile.svg.png" height="30px"></marquee>
+            <div class="row">
+            {% for item in news_sources%}
+          <div class="col-md-4">
+          <div class="thumbnail">
+             <li style="color:#3a4a84; list-style-type: none; font-size:20px;">{{item.name}}</li>
+             <hr>
+             
+             <h6 style="text-decoration:underline;">More about {{ item.name }}</h6>
+             <p style="color:black; font-family: 'Handlee', cursive;">{{ item.description }}</p>
+             <hr>
+
+             <a href="/articles/{{item.id}}"><button style=" border:1px solid black;" class="btn btn-sm">Visit</button></a>
+
+          </div>
+          </div>
+          {% endfor %}
+          </div>
+          </div>
+      </ul>
     </body>
 </html>
