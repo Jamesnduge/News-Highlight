@@ -3,11 +3,11 @@ class Source:
     Source class to define News source Objects
     '''
 
-    def __init__(self, id, name, description, urlToImage):
+    def __init__(self, id, name, description):
         self.id =id
         self.name = name
         self.description = description
-        self.urlToImage = urlToImage
+
 
 class Articles:
     '''
